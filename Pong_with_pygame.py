@@ -8,7 +8,7 @@ import pygame
 import sys
 
 from ball import Ball
-from pad import Padd
+from padds import Padd
 
 pygame.init()
 
