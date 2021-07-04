@@ -14,7 +14,7 @@ from padds import Padd
 pygame.init()
 
 size = width, height = 640, 480
-speed = [3, 3]
+speed = [-3, 3]
 ball_size = [30, 30]
 white = (255, 255, 255)
 black = (0, 0, 0)
@@ -99,15 +99,16 @@ while run:
 
     # shoot ball with padds
 
-    if (ballrect[1] - 10 <= y_a <= ballrect[1] + 10) and ballrect[0] <= 30:
+    if (30 > ballrect[0] > 15) and (ballrect[1] - 60 < y_a < ballrect[1] + 60):
         speed[0] = -speed[0]
 
-    if (ballrect[1] - 10 <= y_b <= ballrect[1] + 10) and ballrect[0] >= 610:
+    if(580 > ballrect[0] > 570) and (ballrect[1] - 60 < y_b < ballrect[1] + 60):
         speed[0] = -speed[0]
 
     if ballrect.left < -10:
         score_b += 1
         ballrect = ball.get_rect(center=(320, 240))
+
     if ballrect.left > 640:
         score_a += 1
         ballrect = ball.get_rect(center=(320, 240))
